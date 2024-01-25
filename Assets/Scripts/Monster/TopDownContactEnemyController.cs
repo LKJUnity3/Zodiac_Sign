@@ -17,7 +17,6 @@ public class TopDownContactEnemyController : TopDownEnemyController
     //}
     //TopDownEnemyController 에서 Awake 사용하지 않아 주석처리
 
-
     protected override void Start()     //TopDownEnemyController의 start()를 재정의
     {
         base.Start();
