@@ -7,7 +7,7 @@ public class TopDownContactEnemyController : TopDownEnemyController
 {
     [SerializeField][Range(0f, 100f)] private float followRange;        //반경 100픽셀 범위의 변수 생성(몬스터 인식 범위로 사용)
     [SerializeField] private string targetTag = "Player";       //Player를 따라가야하므로 tag로 찾기 위해 tag값 저장
-    private bool isCollidingWithTarget;     //Player와 충돌 여부 판단 bool 값
+    private bool _isCollidingWithTarget;     //Player와 충돌 여부 판단 bool 값
 
     [SerializeField] private SpriteRenderer characterRenderer;      
 
@@ -33,7 +33,7 @@ public class TopDownContactEnemyController : TopDownEnemyController
             direction = DirectionToTarget();
         }
 
-        CallMoveEvent(direction);
+        CallMoveEvent(direction);       
         Rotate(direction);
     }
 

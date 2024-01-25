@@ -6,7 +6,7 @@ public class TopDownEnemyController : TopDownCharacterController
 {
     GameManager gameManager;
 
-    protected Transform ClosetTarget { get; private set; }      //충돌하러 가는 몬스터 위치
+    protected Transform ClosetTarget { get; private set; }      //몬스터가 충돌해야하는 플레이어의 위치
 
     //protected override void Awake()
     //{
