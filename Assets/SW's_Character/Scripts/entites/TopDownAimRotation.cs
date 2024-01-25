@@ -13,7 +13,7 @@ public class TopDownAimRotation : MonoBehaviour
     [SerializeField] private SpriteRenderer characterRenderer;
 
     private TopDownCharacterController _controller;
-    //private도 유니티에서 보여지게 병렬화
+    
 
 
     private void Awake()
@@ -38,6 +38,6 @@ public class TopDownAimRotation : MonoBehaviour
 
         armRenderer.flipY = Mathf.Abs(rotZ) > 90f; 
         characterRenderer.flipX = armRenderer.flipY;
-        armPivot.rotation = Quaternion.Euler(0, 0, rotZ); // 라디안 값이 아닌 오일러각도로 변환 
+        armPivot.rotation = Quaternion.Euler(0, 0, rotZ); // 
     }
 }

@@ -31,6 +31,6 @@ public class TopDownMovement : MonoBehaviour
     private void ApplyMovement(Vector2 direction)
     {
         direction = direction * 5;
-        _rigidbody.velocity = direction; // ¸®Áþº¸µð ¼Óµµ  µð·º¼Ç°ú µ¿±âÈ­
+        _rigidbody.velocity = direction; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½  ï¿½ð·º¼Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½È­
     }
 }
