@@ -9,7 +9,7 @@ public class PlayerInputController : TopDownCharacterController
 
     private void Awake()
     {
-
+      
         _camera = Camera.main;
     }
 
@@ -19,10 +19,11 @@ public class PlayerInputController : TopDownCharacterController
         CallMoveEvent(moveInput);
     }
 
-    public void OnLove(InputValue value)
+    public void OnLook(InputValue value)
     {
+        Debug.Log("OnLook"+value.ToString());
         Vector2 newAim = value.Get<Vector2>();
-        Vector2 worldPos = _camera.WorldToScreenPoint(newAim); // worldPos 내 월드상의 마우스 포지션
+        Vector2 worldPos = _camera.ScreenToWorldPoint(newAim); // worldPos 내 월드상의 마우스 포지션
         newAim = (worldPos -(Vector2)transform.position).normalized;
 
         if (newAim.magnitude >= .9f)
