@@ -34,7 +34,7 @@ public class TopDownContactEnemyController : TopDownEnemyController
         }
 
         CallMoveEvent(direction);       
-        Rotate(direction);
+        Rotate(direction);      
     }
 
 
