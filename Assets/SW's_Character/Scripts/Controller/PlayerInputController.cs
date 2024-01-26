@@ -21,9 +21,9 @@ public class PlayerInputController : TopDownCharacterController
 
     public void OnLook(InputValue value)
     {
-        Debug.Log("OnLook"+value.ToString());
+       
         Vector2 newAim = value.Get<Vector2>();
-        Vector2 worldPos = _camera.ScreenToWorldPoint(newAim); // worldPos �� ������� ���콺 ������
+        Vector2 worldPos = _camera.ScreenToWorldPoint(newAim); // worldPos 
         newAim = (worldPos -(Vector2)transform.position).normalized;
 
         if (newAim.magnitude >= .9f)
@@ -34,6 +34,6 @@ public class PlayerInputController : TopDownCharacterController
 
     public void OnFire(InputValue value)
     {
-
+        IsAttacking = value.isPressed;
     }
 }
