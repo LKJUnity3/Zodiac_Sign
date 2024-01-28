@@ -9709,7 +9709,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -14779,7 +14779,7 @@ MonoBehaviour:
   enemyPrefebs:
   - {fileID: 2953288680746245057, guid: 49d8a02c6006ca24ab3de7ac323f6e83, type: 3}
   - {fileID: 2077031647445329981, guid: 2c5fd9d8b7eeb9e44a45040769fa0da1, type: 3}
-  spawnPositionsRoot: {fileID: 0}
+  spawnPositionsRoot: {fileID: 1490738883}
   rewards:
   - {fileID: 1080145873789702924, guid: 98637fe89022e914689b5cb9b13f5a1f, type: 3}
   - {fileID: 6578294875813889859, guid: 688910af0bf2e174f9004bf1c4968aa2, type: 3}
