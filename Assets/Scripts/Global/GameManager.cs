@@ -21,11 +21,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
 
     [SerializeField] private int currentWaveIndex = 0;
+
     private int currentSpawnCount = 0;
     private int waveSpawnCount = 0;
     private int waveSpawnPosCount = 0;
 
     public float spawnInterval = .5f;
+
     public List<GameObject> enemyPrefebs = new List<GameObject>();
 
     [SerializeField] private Transform spawnPositionsRoot;
@@ -75,7 +77,8 @@ public class GameManager : MonoBehaviour
                 {
                     RandomUpgrade();
                 }
-                if(currentWaveIndex % 10 == 10)
+
+                if(currentWaveIndex % 10 == 0)
                 {
                     waveSpawnPosCount = waveSpawnPosCount + 1 > spawnPositions.Count ? waveSpawnPosCount : waveSpawnPosCount + 1;
                     waveSpawnCount = 0;
@@ -83,7 +86,7 @@ public class GameManager : MonoBehaviour
 
                 if(currentWaveIndex % 5 == 0)
                 {
-
+                    CreateReward();
                 }
 
                 if(currentWaveIndex % 3 == 0)
@@ -94,6 +97,7 @@ public class GameManager : MonoBehaviour
                 for(int i = 0; i < waveSpawnPosCount; i++)
                 {
                     int PosIdx = Random.Range(0, spawnPositions.Count);
+
                     for (int j = 0; j < waveSpawnCount; j++)
                     {
                         int prefabIdx = Random.Range(0, enemyPrefebs.Count);
