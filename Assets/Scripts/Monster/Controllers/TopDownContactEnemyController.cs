@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,11 @@ public class TopDownContactEnemyController : TopDownEnemyController
     [SerializeField] private string targetTag = "Player";       //Player를 따라가야하므로 tag로 찾기 위해 tag값 저장
     private bool _isCollidingWithTarget;     //Player와 충돌 여부 판단 bool 값
 
-    [SerializeField] private SpriteRenderer characterRenderer;      
+    [SerializeField] private SpriteRenderer characterRenderer;
+
+    private HealthSystem healthSystem;
+    private HealthSystem _collidingTargetHealthSystem;
+    private TopDownMovement _collidingMovement;
 
     //protected virtual void Awake()
     //{
@@ -20,11 +25,23 @@ public class TopDownContactEnemyController : TopDownEnemyController
     protected override void Start()     //TopDownEnemyController의 start()를 재정의
     {
         base.Start();
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.OnDamage += OnDamage;
+    }
+
+    private void OnDamage()
+    {
+        followRange = 100f;
     }
 
     protected override void FixedUpdate()       //TopDownEnemyController의 FixedUpdate() 를 재정의
     {
         base.FixedUpdate();
+
+        if(_isCollidingWithTarget)
+        {
+            ApplyHealthChange();
+        }
 
         Vector2 direction = Vector2.zero;
 
@@ -46,4 +63,39 @@ public class TopDownContactEnemyController : TopDownEnemyController
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject receiver = collision.gameObject;
+
+        if(!receiver.CompareTag(targetTag))
+        {
+            return;
+        }
+
+        _collidingTargetHealthSystem = receiver.GetComponent<HealthSystem>();
+        if(_collidingTargetHealthSystem != null )
+        {
+            _isCollidingWithTarget = true;
+        }
+
+        _collidingMovement = receiver.GetComponent<TopDownMovement>();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(!collision.CompareTag(targetTag))
+        { return; }
+
+        _isCollidingWithTarget = false;
+    }
+
+    private void ApplyHealthChange()
+    {
+        AttackSO attackSO = Stats.CurrentStates.attackSO;
+        bool hasBeenChanged = _collidingTargetHealthSystem.ChangeHealth(-attackSO.power);
+        if(attackSO.isOnKnockback && _collidingMovement != null)
+        {
+            _collidingMovement.ApplyKnockback(transform, attackSO.knockbackPower, attackSO.knockbackTime);
+        }
+    }
 }
