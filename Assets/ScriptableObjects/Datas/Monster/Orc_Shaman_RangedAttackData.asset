@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 1
   delay: 1
-  power: 2
-  speed: 3
+  power: 1
+  speed: 5
   target:
     serializedVersion: 2
     m_Bits: 256
   isOnKnockback: 1
   knockbackPower: 5
   knockbackTime: 0.1
-  bulletNameTag: Arrow
+  bulletNameTag: Banana
   duration: 5
   spread: 2
   numberofProjectilesPerShot: 1
