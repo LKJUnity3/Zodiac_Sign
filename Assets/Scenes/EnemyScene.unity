@@ -297,7 +297,6 @@ GameObject:
   - component: {fileID: 170722813}
   - component: {fileID: 170722812}
   - component: {fileID: 170722811}
-  - component: {fileID: 170722810}
   - component: {fileID: 170722819}
   - component: {fileID: 170722818}
   m_Layer: 6
@@ -324,20 +323,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &170722810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170722808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd795e5252a87ee43b82c822d9497551, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followRange: 100
-  shootRange: 10
 --- !u!114 &170722811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,14 +378,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 2
-    maxHealth: 33
-    speed: 3
+    maxHealth: 100
+    speed: 4.5
     attackSO: {fileID: 11400000, guid: a4fcd6872ac3485468afca7f468f1322, type: 2}
-  statsModifiers:
-  - statsChangeType: 2
-    maxHealth: 72
-    speed: 1
-    attackSO: {fileID: 11400000, guid: a4fcd6872ac3485468afca7f468f1322, type: 2}
+  statsModifiers: []
 --- !u!114 &170722815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22292,7 +22273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   Level: {fileID: 13659135}
-  timeText: {fileID: 0}
+  timeText: {fileID: 856002141}
   hpGaugeSlider: {fileID: 1679456649}
   gameOverUI: {fileID: 1669374171}
   currentWaveIndex: 0
@@ -22319,8 +22300,9 @@ MonoBehaviour:
     maxHealth: 0
     speed: 0
     attackSO: {fileID: 11400000, guid: 73e600f4b9cb84c458e7eaf84af40ee3, type: 2}
-  stage_1: {fileID: 0}
-  stage_2: {fileID: 0}
+  stage_1: {fileID: 1159679672}
+  stage_2: {fileID: 455169039}
+  boss: {fileID: 170722808}
 --- !u!1 &1617121395
 GameObject:
   m_ObjectHideFlags: 0
