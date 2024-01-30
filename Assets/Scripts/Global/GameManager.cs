@@ -68,6 +68,21 @@ public class GameManager : MonoBehaviour
     {
         while(true)
         {
+            for(int i = 0; i < 10; i++)
+            {
+                int PosIdx = Random.Range(0, spawnPositions.Count);
+
+                int prefabIdx = Random.Range(0, enemyPrefebs.Count);
+                GameObject enemy = Instantiate(enemyPrefebs[prefabIdx], spawnPositions[PosIdx].position, Quaternion.identity);
+                enemy.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
+                enemy.GetComponent<CharacterStatsHandler>().AddStatModifier(defaultStats);
+                enemy.GetComponent<CharacterStatsHandler>().AddStatModifier(rangedStats);
+                currentSpawnCount++;
+
+                yield return new WaitForSeconds(1f);
+            }
+
+
             if(currentSpawnCount == 0)
             {
                 UpdateWaveUI();
