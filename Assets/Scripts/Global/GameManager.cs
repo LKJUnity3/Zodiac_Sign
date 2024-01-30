@@ -24,11 +24,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverUI;
 
-    [SerializeField] private int currentWaveIndex = 0;
-
     private int currentSpawnCount = 0;
-    private int waveSpawnCount = 0;
-    private int waveSpawnPosCount = 0;
 
     public float spawnInterval = .5f;
 
@@ -89,16 +85,20 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Ep_1");
             }
-            else if (stage_2.activeSelf == true)
+            else if(stage_2.activeSelf == true && boss != null)
             {
-                SceneManager.LoadScene("Ep_2");
-            }
-
+                GameOver();
+            }    
         }
 
-        if(timer <= 50f && stage_2.activeSelf == true)
+        if (timer <= 50f && stage_2.activeSelf == true)
         {
             boss.SetActive(true);
+        }
+
+        if (stage_2.activeSelf == true && boss == null && timer > 0f)
+        {
+            SceneManager.LoadScene("Ep_2");
         }
 
         timer -= Time.deltaTime;

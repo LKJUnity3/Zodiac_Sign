@@ -297,11 +297,9 @@ GameObject:
   - component: {fileID: 170722813}
   - component: {fileID: 170722812}
   - component: {fileID: 170722811}
-  - component: {fileID: 170722819}
-  - component: {fileID: 170722818}
   m_Layer: 6
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,6 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
+  score: 0
 --- !u!114 &170722814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 2
-    maxHealth: 100
+    maxHealth: 1
     speed: 4.5
     attackSO: {fileID: 11400000, guid: a4fcd6872ac3485468afca7f468f1322, type: 2}
   statsModifiers: []
@@ -466,35 +465,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58, y: 0.58}
   m_EdgeRadius: 0
---- !u!114 &170722818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170722808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb9ca93bf8166142aa082d30498bc61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpawnPosition: {fileID: 834157067}
-  shootingClip: {fileID: 0}
---- !u!114 &170722819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170722808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e0b64314c2248645a6be30f8ba6244d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armRenderer: {fileID: 1367534130}
-  armPivot: {fileID: 1401806470}
-  characterRenderer: {fileID: 2146867846}
 --- !u!58 &170722820
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7543,6 +7513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  score: 0
 --- !u!114 &525511760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7743,7 +7714,7 @@ Transform:
   - {fileID: 1983592306}
   - {fileID: 1237435233}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &591827995
 GameObject:
@@ -13604,6 +13575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  score: 0
 --- !u!114 &897290854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14213,7 +14185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159679673
 Transform:
   m_ObjectHideFlags: 0
