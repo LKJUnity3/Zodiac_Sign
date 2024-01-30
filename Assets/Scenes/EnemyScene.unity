@@ -12481,7 +12481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706378821}
   m_Layer: 5
-  m_Name: Wave
+  m_Name: Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12854,7 +12854,7 @@ GameObject:
   - component: {fileID: 856002142}
   - component: {fileID: 856002141}
   m_Layer: 5
-  m_Name: WaveCount
+  m_Name: TimeCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12880,7 +12880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9999
+  m_text: 0.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22089,7 +22089,7 @@ GameObject:
   - component: {fileID: 1532316378}
   - component: {fileID: 1532316377}
   m_Layer: 5
-  m_Name: WaveText
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22292,7 +22292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   Level: {fileID: 13659135}
-  waveText: {fileID: 856002141}
+  timeText: {fileID: 0}
   hpGaugeSlider: {fileID: 1679456649}
   gameOverUI: {fileID: 1669374171}
   currentWaveIndex: 0
@@ -22319,6 +22319,8 @@ MonoBehaviour:
     maxHealth: 0
     speed: 0
     attackSO: {fileID: 11400000, guid: 73e600f4b9cb84c458e7eaf84af40ee3, type: 2}
+  stage_1: {fileID: 0}
+  stage_2: {fileID: 0}
 --- !u!1 &1617121395
 GameObject:
   m_ObjectHideFlags: 0
