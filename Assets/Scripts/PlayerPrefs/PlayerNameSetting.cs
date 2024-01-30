@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerPref : MonoBehaviour
+public class PlayerNameSetting : MonoBehaviour
 {
     [SerializeField] private InputField PlayerName;
     private string PlayerNameText = null;
