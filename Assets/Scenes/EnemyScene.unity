@@ -306,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &170722809
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170722808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.28, y: 14.79, z: 0}
+  m_LocalPosition: {x: -1.3, y: 39.9, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -400,7 +400,7 @@ MonoBehaviour:
   - statsChangeType: 2
     maxHealth: 72
     speed: 1
-    attackSO: {fileID: 11400000, guid: 50bd1bc20059ee94a9c684315b47ceca, type: 2}
+    attackSO: {fileID: 11400000, guid: a4fcd6872ac3485468afca7f468f1322, type: 2}
 --- !u!114 &170722815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7325,7 +7325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &455169040
 Transform:
   m_ObjectHideFlags: 0
@@ -7334,7 +7334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455169039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
