@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -46,7 +47,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject stage_1;
     [SerializeField] GameObject stage_2;
 
-
     private void Awake()
     {
         instance = this;
@@ -83,15 +83,15 @@ public class GameManager : MonoBehaviour
         if (timer <= 0f)
         {
             timer = 0f;
-            if(stage_1.activeSelf == true && stage_2.activeSelf == false)
+            if (stage_1.activeSelf == true && stage_2.activeSelf == false)
             {
                 SceneManager.LoadScene("Ep_1");
             }
-            else if(stage_1.activeSelf == true && stage_1.activeSelf == false) 
+            else if (stage_1.activeSelf == true && stage_1.activeSelf == false)
             {
                 SceneManager.LoadScene("Ep_2");
             }
-            
+
         }
 
         timer -= Time.deltaTime;
@@ -180,6 +180,7 @@ public class GameManager : MonoBehaviour
     {
         hpGaugeSlider.value = playerHealthSystem.CurrentHealth / playerHealthSystem.MaxHealth;
     }
+
 
     public void RestartGame()
     {
