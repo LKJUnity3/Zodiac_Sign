@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    
+
     public Transform Player { get; private set; }
     [SerializeField] private string playerTag = "Player";
+    [SerializeField] private GameObject Level;
 
     private HealthSystem playerHealthSystem;
 
@@ -50,6 +53,11 @@ public class GameManager : MonoBehaviour
         playerHealthSystem.OnDeath += GameOver;
 
         gameOverUI.SetActive(false);
+
+        int stage = PlayerPrefs.GetInt("Stage", 1);
+        Level.transform.Find($"Stage_{stage}").gameObject.SetActive(true);
+        
+        
 
         for(int i = 0; i < spawnPositionsRoot.childCount; i++)
         {

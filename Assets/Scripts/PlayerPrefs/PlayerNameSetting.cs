@@ -27,7 +27,7 @@ public class PlayerNameSetting : MonoBehaviour
         else
         {
             Panel.SetActive(true);
-            Panel.GetComponentInChildren<Text>().text = "¿Ã¹Ù¸¥ ´Ğ³×ÀÓÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.\n2~10ÀÚ, ¶ç¾î¾²±â °ø¹éºÒ°¡";
+            Panel.GetComponentInChildren<Text>().text = "ì´ë¦„ì„ ì˜¬ë°”ë¥´ê²Œ ì…ë ¥í•´ì£¼ì„¸ìš”. 2~10ì ê³µë°±, ë„ì–´ì“°ê¸°ëŠ” ì•ˆë©ë‹ˆë‹¤.";
         }
     }
 
