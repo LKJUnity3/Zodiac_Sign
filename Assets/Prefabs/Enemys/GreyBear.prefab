@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5195709480793952914}
   - component: {fileID: 1181147689042455275}
   m_Layer: 6
-  m_Name: Goblin
+  m_Name: GreyBear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 8852897442934919678}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4550640893127162690
 BoxCollider2D:
@@ -83,7 +83,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 0.9}
   m_EdgeRadius: 0
 --- !u!50 &3844326372711169626
 Rigidbody2D:
@@ -146,7 +146,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.43
 --- !u!114 &3884740051245799770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 2
-    maxHealth: 3
-    speed: 2
+    maxHealth: 15
+    speed: 3.1
     attackSO: {fileID: 11400000, guid: a4fcd6872ac3485468afca7f468f1322, type: 2}
   statsModifiers: []
 --- !u!114 &4604556569744335955
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3302df35a95822e43a9b2f363c966f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followRange: 13.9
+  followRange: 100
   targetTag: Player
   characterRenderer: {fileID: 6048997770782429422}
 --- !u!114 &5195709480793952914
@@ -291,7 +291,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f6da1e1082c4a44690c732719245a6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
