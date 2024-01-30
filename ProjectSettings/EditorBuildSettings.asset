@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectScene.unity
     guid: df88f485901861d44956444d05c520fb
+  - enabled: 1
+    path: Assets/Scenes/EnemyScene.unity
+    guid: 9017d265bfec0eb4b8c017c22d3be7eb
   m_configObjects: {}
