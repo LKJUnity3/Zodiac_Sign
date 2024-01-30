@@ -7505,6 +7505,9 @@ MonoBehaviour:
   - tag: Arrow
     prefab: {fileID: 280784479107008736, guid: 4187a1ab1d7d2b14b965c1fdd833e3c6, type: 3}
     size: 20
+  - tag: Banana
+    prefab: {fileID: 280784479107008736, guid: 861c7c758a70d9541b4da7403895b1d8, type: 3}
+    size: 20
 --- !u!1 &995250186
 GameObject:
   m_ObjectHideFlags: 0
@@ -14777,12 +14780,7 @@ MonoBehaviour:
   currentWaveIndex: 0
   spawnInterval: 0.5
   enemyPrefebs:
-  - {fileID: 2953288680746245057, guid: 49d8a02c6006ca24ab3de7ac323f6e83, type: 3}
   - {fileID: 2077031647445329981, guid: 2c5fd9d8b7eeb9e44a45040769fa0da1, type: 3}
-  - {fileID: 2953288680746245057, guid: 1c5ff80de685b4b4d9e0af7863351faf, type: 3}
-  - {fileID: 2953288680746245057, guid: 718a6b19da668e84e9105b088a12c479, type: 3}
-  - {fileID: 2953288680746245057, guid: 72d8da69204bfcb41be23dfa88364228, type: 3}
-  - {fileID: 2953288680746245057, guid: ef92bf8e224b9634bab0d0453edaaec5, type: 3}
   spawnPositionsRoot: {fileID: 1490738883}
   rewards:
   - {fileID: 1080145873789702924, guid: 98637fe89022e914689b5cb9b13f5a1f, type: 3}
