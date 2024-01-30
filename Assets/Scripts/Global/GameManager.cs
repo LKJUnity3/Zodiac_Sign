@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     private HealthSystem playerHealthSystem;
 
-    [SerializeField] private TextMeshProUGUI waveText;
+    [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private Slider hpGaugeSlider;
 
     [SerializeField] private GameObject gameOverUI;
@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private CharacterStats defaultStats;
     [SerializeField] private CharacterStats rangedStats;
+
+    float timer = 10.0f;
+
+    [SerializeField] GameObject stage_1;
+    [SerializeField] GameObject stage_2;
+
 
     private void Awake()
     {
@@ -64,6 +70,26 @@ public class GameManager : MonoBehaviour
         StartCoroutine("StartNextWave");
     }
 
+    private void Update()
+    {
+        if (timer <= 0f)
+        {
+            timer = 0f;
+            if(stage_1.activeSelf == true && stage_2.activeSelf == false)
+            {
+                SceneManager.LoadScene("Ep_1");
+            }
+            else if(stage_1.activeSelf == true && stage_1.activeSelf == false) 
+            {
+                SceneManager.LoadScene("Ep_2");
+            }
+            
+        }
+
+        timer -= Time.deltaTime;
+        timeText.text = timer.ToString("N1");
+    }
+
     IEnumerator StartNextWave()
     {
         while(true)
@@ -85,7 +111,6 @@ public class GameManager : MonoBehaviour
 
             if(currentSpawnCount == 0)
             {
-                UpdateWaveUI();
                 yield return new WaitForSeconds(2f);
 
                 if(currentWaveIndex % 20 == 0)
@@ -146,11 +171,6 @@ public class GameManager : MonoBehaviour
     private void UpdateHealthUI()
     {
         hpGaugeSlider.value = playerHealthSystem.CurrentHealth / playerHealthSystem.MaxHealth;
-    }
-
-    private void UpdateWaveUI()
-    {
-        waveText.text = (currentWaveIndex + 1).ToString();
     }
 
     public void RestartGame()
