@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
             if (stage_1.activeSelf == true)
             {
-                SceneManager.LoadScene("Ep_1");
+                SceneManager.LoadScene("SelectScene");
             }
         }
 
@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Ep_2");
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
