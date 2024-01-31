@@ -85,20 +85,11 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Ep_1");
             }
-            else if(stage_2.activeSelf == true && boss != null)
-            {
-                GameOver();
-            }    
         }
 
         if (timer <= 50f && stage_2.activeSelf == true)
         {
             boss.SetActive(true);
-        }
-
-        if (stage_2.activeSelf == true && boss == null && timer > 0f)
-        {
-            SceneManager.LoadScene("Ep_2");
         }
 
         timer -= Time.deltaTime;
@@ -177,6 +168,16 @@ public class GameManager : MonoBehaviour
         rangedStats.attackSO = Instantiate(rangedStats.attackSO);
     }
 
-   
+   public void StageClear()
+    {
+        if(timer <= 0f) 
+        {
+            GameOver();
+        }
+        else
+        {
+            SceneManager.LoadScene("Ep_2");
+        }
+    }
 }
 
