@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
 
         gameOverUI.SetActive(false);
 
+        Time.timeScale = 1f;
+
         int stage = PlayerPrefs.GetInt("Stage", 1);
         Level.transform.Find($"Stage_{stage}").gameObject.SetActive(true);
         
