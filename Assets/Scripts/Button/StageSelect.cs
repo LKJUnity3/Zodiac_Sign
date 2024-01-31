@@ -10,6 +10,14 @@ public class StageSelect : MonoBehaviour
     public void Onclick()
     {
         PlayerPrefs.SetInt("Stage", Stage);
-        SceneManager.LoadScene("EnemyScene");
+        if (Stage == 1)
+        {
+            SceneManager.LoadScene($"Ep_{Stage}");
+        }
+        else
+        {
+            SceneManager.LoadScene($"EnemyScene");
+        }
+        
     }
 }
