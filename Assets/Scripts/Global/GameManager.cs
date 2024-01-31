@@ -85,20 +85,11 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Ep_1");
             }
-            else if(stage_2.activeSelf == true && boss != null)
-            {
-                GameOver();
-            }    
         }
 
         if (timer <= 50f && stage_2.activeSelf == true)
         {
             boss.SetActive(true);
-        }
-
-        if (stage_2.activeSelf == true && boss == null && timer > 0f)
-        {
-            SceneManager.LoadScene("Ep_2");
         }
 
         timer -= Time.deltaTime;
@@ -138,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        Time.timeScale = 0f;
         gameOverUI.SetActive(true);
         StopAllCoroutines();
     }
@@ -176,41 +168,16 @@ public class GameManager : MonoBehaviour
         rangedStats.attackSO = Instantiate(rangedStats.attackSO);
     }
 
-    void RandomUpgrade()
+   public void StageClear()
     {
-        switch(Random.Range(0, 6))
+        if(timer <= 0f) 
         {
-            case 0:
-                defaultStats.maxHealth += 2;
-                break;
-
-            case 1:
-                defaultStats.attackSO.power += 1;
-                break;
-
-            case 2:
-                defaultStats.attackSO.isOnKnockback = true;
-                defaultStats.attackSO.knockbackPower += 1;
-                defaultStats.attackSO.knockbackTime = 0.1f;
-                break;
-
-            case 3:
-                defaultStats.speed += 0.1f;
-                break;
-
-            case 4:
-                defaultStats.attackSO.delay -= 0.05f;
-                break;
-
-            case 5:
-                RangedAttackData rangedAttackData = rangedStats.attackSO as RangedAttackData;
-                rangedAttackData.numberofProjectilesPerShot += 1;
-                break;
-
-            default:
-                break;
+            GameOver();
         }
-
+        else
+        {
+            SceneManager.LoadScene("Ep_2");
+        }
     }
 }
 

@@ -362,7 +362,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 0}
-  score: 0
 --- !u!114 &170722814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 2
-    maxHealth: 1
+    maxHealth: 50
     speed: 4.5
     attackSO: {fileID: 11400000, guid: a4fcd6872ac3485468afca7f468f1322, type: 2}
   statsModifiers: []
@@ -7513,7 +7512,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
-  score: 0
 --- !u!114 &525511760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13575,7 +13573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.5
   damageClip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
-  score: 0
 --- !u!114 &897290854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27377,7 +27374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Wave
+  m_text: Time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27537,7 +27534,6 @@ MonoBehaviour:
   timeText: {fileID: 856002141}
   hpGaugeSlider: {fileID: 1679456649}
   gameOverUI: {fileID: 1669374171}
-  currentWaveIndex: 0
   spawnInterval: 0.5
   enemyPrefebs:
   - {fileID: 2077031647445329981, guid: 2c5fd9d8b7eeb9e44a45040769fa0da1, type: 3}
