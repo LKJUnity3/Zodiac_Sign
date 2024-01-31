@@ -24,11 +24,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverUI;
 
-    [SerializeField] private int currentWaveIndex = 0;
-
     private int currentSpawnCount = 0;
-    private int waveSpawnCount = 0;
-    private int waveSpawnPosCount = 0;
 
     public float spawnInterval = .5f;
 
@@ -42,10 +38,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CharacterStats defaultStats;
     [SerializeField] private CharacterStats rangedStats;
 
-    float timer = 10.0f;
+    float timer = 100.0f;
 
     [SerializeField] GameObject stage_1;
     [SerializeField] GameObject stage_2;
+    [SerializeField] GameObject boss;
 
     private void Awake()
     {
@@ -83,15 +80,25 @@ public class GameManager : MonoBehaviour
         if (timer <= 0f)
         {
             timer = 0f;
-            if (stage_1.activeSelf == true && stage_2.activeSelf == false)
+
+            if (stage_1.activeSelf == true)
             {
                 SceneManager.LoadScene("Ep_1");
             }
-            else if (stage_1.activeSelf == true && stage_1.activeSelf == false)
+            else if(stage_2.activeSelf == true && boss != null)
             {
-                SceneManager.LoadScene("Ep_2");
-            }
+                GameOver();
+            }    
+        }
 
+        if (timer <= 50f && stage_2.activeSelf == true)
+        {
+            boss.SetActive(true);
+        }
+
+        if (stage_2.activeSelf == true && boss == null && timer > 0f)
+        {
+            SceneManager.LoadScene("Ep_2");
         }
 
         timer -= Time.deltaTime;
@@ -116,51 +123,10 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(1f);
             }
 
+            CreateReward();
 
-            if(currentSpawnCount == 0)
-            {
-                yield return new WaitForSeconds(2f);
 
-                if(currentWaveIndex % 20 == 0)
-                {
-                    RandomUpgrade();
-                }
-
-                if(currentWaveIndex % 10 == 0)
-                {
-                    waveSpawnPosCount = waveSpawnPosCount + 1 > spawnPositions.Count ? waveSpawnPosCount : waveSpawnPosCount + 1;
-                    waveSpawnCount = 0;
-                }
-
-                if(currentWaveIndex % 5 == 0)
-                {
-                    CreateReward();
-                }
-
-                if(currentWaveIndex % 3 == 0)
-                {
-                    waveSpawnCount++;
-                }
-
-                for(int i = 0; i < waveSpawnPosCount; i++)
-                {
-                    int PosIdx = Random.Range(0, spawnPositions.Count);
-
-                    for (int j = 0; j < waveSpawnCount; j++)
-                    {
-                        int prefabIdx = Random.Range(0, enemyPrefebs.Count);
-                        GameObject enemy = Instantiate(enemyPrefebs[prefabIdx], spawnPositions[PosIdx].position, Quaternion.identity);
-                        enemy.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
-                        enemy.GetComponent<CharacterStatsHandler>().AddStatModifier(defaultStats);
-                        enemy.GetComponent<CharacterStatsHandler>().AddStatModifier(rangedStats);
-                        currentSpawnCount++;
-                        yield return new WaitForSeconds(spawnInterval);
-
-                    }
-                }
-
-                currentWaveIndex++;
-            }
+            
             yield return null;
         }
     }
