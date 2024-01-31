@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Castle
+  - Boss
   layers:
   - Default
   - TransparentFX
