@@ -31,5 +31,10 @@ public class DisappearOnDeath : MonoBehaviour
         }
 
         Destroy(gameObject, 2f);
+        if(transform.tag == "Boss")
+        {
+            GameManager.instance.StageClear();
+
+        }
     }
 }
