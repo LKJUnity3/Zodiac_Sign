@@ -138,6 +138,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        Time.timeScale = 0f;
         gameOverUI.SetActive(true);
         StopAllCoroutines();
     }
