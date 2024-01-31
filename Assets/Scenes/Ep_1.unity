@@ -242,8 +242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.5041, y: -153.8617}
-  m_SizeDelta: {x: 654.9917, y: 71.7235}
+  m_AnchoredPosition: {x: -144, y: -145}
+  m_SizeDelta: {x: 401.0732, y: 30.696}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116041844
 MonoBehaviour:
@@ -266,7 +266,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 07471691c23e15241b4455590ec45741, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -504,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &336016608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -583,12 +583,12 @@ GameObject:
   - component: {fileID: 361012147}
   - component: {fileID: 361012148}
   m_Layer: 0
-  m_Name: SnunimBody
+  m_Name: "\uB204\uC774"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &361012147
 Transform:
   m_ObjectHideFlags: 0
@@ -864,7 +864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 115, y: 122}
+  m_AnchoredPosition: {x: 118, y: 123}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &805315739
@@ -888,7 +888,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5c9e4f952cb57bb4ebd25c3dee3eea1a, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 1305664751}
   - component: {fileID: 1305664752}
   m_Layer: 0
-  m_Name: char40
+  m_Name: "\uC624\uBE60"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.502}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338.31, y: -184.45}
+  m_AnchoredPosition: {x: 345, y: -186}
   m_SizeDelta: {x: 23.5895, y: 23.9708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1787246153
@@ -2045,20 +2045,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3b976a87a29ea4ea50220724eaef13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 0}
+  characterSpriteLeft: {fileID: 1305664751}
+  characterSpriteRight: {fileID: 361012148}
   messageText: {fileID: 116041844}
-  name: {fileID: 805315739}
+  nameText: {fileID: 805315739}
+  nextButton: {fileID: 1787246153}
   characters:
-  - characterName: "\uC624\uBE60"
+  - Choose: 0
+    characterName: "\uC624\uBE60"
     characterSprite: {fileID: 21300000, guid: 553e69929ba408c42a3a4d309b6d042e, type: 3}
-    messages:
-    - "\"\uB3D9\uC0DD\uC544, \uC774 \uAF43\uB4E4 \uBCF4\uB2C8\uAE4C \uB108\uBB34
+    messages: " \"\uB3D9\uC0DD\uC544, \uC774 \uAF43\uB4E4 \uBCF4\uB2C8\uAE4C \uB108\uBB34
       \uC608\uC058\uC9C0?\""
-  - characterName: "\uB204\uC774"
+  - Choose: 1
+    characterName: "\uB204\uC774"
     characterSprite: {fileID: 21300000, guid: 804c75d3f7e764945b482de49b78c300, type: 3}
-    messages:
-    - "\uC751, \uC815\uB9D0 \uC608\uC058\uB2E4. \uC624\uBE60\uB791 \uAC19\uC774 \uC788\uB294
-      \uAC83\uB3C4 \uB108\uBB34 \uD589\uBCF5\uD574."
+    messages: " \"\uC751, \uC815\uB9D0 \uC608\uC058\uB2E4. \uC624\uBE60\uB791 \uAC19\uC774
+      \uC788\uB294 \uAC83\uB3C4 \uB108\uBB34 \uD589\uBCF5\uD574.\""
+  - Choose: 1
+    characterName: "\uB204\uC774"
+    characterSprite: {fileID: 21300000, guid: 804c75d3f7e764945b482de49b78c300, type: 3}
+    messages: " \"\uCC38\uB9D0\uB85C \uC5B4\uC5EC\uC069\uB2C8\uB2E4, \uC544 \uBB3C\uB860
+      \uC624\uB77C\uBC84\uB2C8\uB791  \uAC19\uC774 \uC788\uB294 \uAC83\uB3C4 \uB108\uBB34
+      \uD589\uBCF5\uD569\uB2C8\uB2E4.\""
+  - Choose: 0
+    characterName: "\uC624\uBE60"
+    characterSprite: {fileID: 21300000, guid: 553e69929ba408c42a3a4d309b6d042e, type: 3}
+    messages: "\"\uC790, \uC774\uC81C \uC9D1\uC73C\uB85C \uB3CC\uC544\uAC00\uC790\uAFB8\uB098.
+      \uC800\uB141\uB54C\uAC00 \uB2E4 \uB418\uC5C8\uAD6C\uB098.\""
+  - Choose: 1
+    characterName: "\uB204\uC774"
+    characterSprite: {fileID: 21300000, guid: 804c75d3f7e764945b482de49b78c300, type: 3}
+    messages: "\"\uC544\uC545!\""
+  - Choose: 0
+    characterName: "\uC624\uBE60"
+    characterSprite: {fileID: 21300000, guid: 804c75d3f7e764945b482de49b78c300, type: 3}
+    messages: "\"\uC5B4\uCA4C\uB2E4 \uC774\uB9AC \uB2E4\uCE58\uC5C8\uB290\uB0D0\""
+  - Choose: 0
+    characterName: "\uB204\uC774"
+    characterSprite: {fileID: 21300000, guid: 804c75d3f7e764945b482de49b78c300, type: 3}
+    messages: "\"\uD638\uB791\uC774\uC5D0\uAC8C \uCAD3\uAE30\uB2E4\uAC00... \uB2E4\uCCE4\uC5B4\uC694.\""
+  - Choose: 0
+    characterName: "\uC624\uBE60"
+    characterSprite: {fileID: 21300000, guid: 804c75d3f7e764945b482de49b78c300, type: 3}
+    messages: "\"\uC544\uC545!\""
 --- !u!1 &2075751662
 GameObject:
   m_ObjectHideFlags: 0
